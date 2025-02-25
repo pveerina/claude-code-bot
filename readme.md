@@ -1,12 +1,12 @@
 # ClaudeCodeBot
 
-ClaudeCodeBot allows you to tag linear issues with "AI" and have claude-code automatically generate a pull request on github.
+ClaudeCodeBot allows you to tag linear issues with "AI" and have [claude code](https://github.com/anthropics/claude-code) automatically generate a pull request on github.
 
 **WARNING: This is an experimental project - use at your own risk!** Running a coding agents, even with a docker environment to somewhat isolate your host system, does not completely mitigate the risks.
 
 ## How it works
 ClaudeCodeBot listens (or polls) for Linear events on issues tagged with "AI" (or any other tag you want to use).
-When a new issue is detected, ClaudeCodeBot checks out the suggested branch name and runs claude-code in a docker container using a summarized version of the issue title + description as the prompt. It then reports back its progress on the original ticket and opens a pull request if successful.
+When a new issue is detected, ClaudeCodeBot checks out the suggested branch name and runs [claude code](https://github.com/anthropics/claude-code) in a docker container using a summarized version of the issue title + description as the prompt. It then reports back its progress on the original ticket and opens a pull request if successful.
 
 
 ## Getting Started
@@ -34,9 +34,9 @@ When a new issue is detected, ClaudeCodeBot checks out the suggested branch name
    uv pip install -e 
    ```
 
-4. Install claude-code and initialize it to produce the ~/.claude.json config file
+4. Install [claude code](https://github.com/anthropics/claude-code) and initialize it to produce the ~/.claude.json config file
 
-4. Build the claude-code docker image:
+4. Build the [claude code](https://github.com/anthropics/claude-code) docker image:
    ```bash
    git clone https://github.com/anthropics/claude-code
    cd claude-code/.devcontainer
@@ -58,7 +58,7 @@ When a new issue is detected, ClaudeCodeBot checks out the suggested branch name
 - `WORKING_DIRECTORY`: Path to the directory where the repository will be cloned (default: "./repo")
 - `LLM_API_KEY`: API key for Anthropic
 - `LLM_MAX_TOKENS`: Maximum tokens in Claude responses (default: 1000)
-- `CLAUDE_CODE_CONFIG`: Path to the Claude Code configuration file. You will need to create this file by running claude-code locally and doing the oauth dance, it then gets saved to `~/.claude.json`.)
+- `CLAUDE_CODE_CONFIG`: Path to the Claude Code configuration file. You will need to create this file by running [claude code](https://github.com/anthropics/claude-code) locally and doing the oauth dance, it then gets saved to `~/.claude.json`.)
 
 
 ## Usage
