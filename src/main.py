@@ -44,28 +44,16 @@ async def run_polling_service(interval=60):
 def main():
     """Main entry point for the application."""
     try:
-        # Parse command line arguments
         parser = argparse.ArgumentParser(description="ClaudeCodeBot")
 
-        # Mode selection
-        mode_group = parser.add_mutually_exclusive_group(required=True)
-        mode_group.add_argument(
-            "--poll",
-            action="store_true",
-            help="Run in polling mode (works locally, no webhook needed)",
-        )
-
-        # Polling-specific arguments
         parser.add_argument(
             "--interval", type=int, default=60, help="Polling interval in seconds (default: 60)"
         )
 
         args = parser.parse_args()
 
-        # Validate the configuration
         validate_config()
 
-        # Run in polling mode
         asyncio.run(run_polling_service(interval=args.interval))
 
     except Exception as e:
