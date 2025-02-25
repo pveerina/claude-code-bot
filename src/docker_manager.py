@@ -76,7 +76,7 @@ class DockerManager:
         try:
             # Get absolute path to the repo
             abs_working_directory = os.path.abspath(self.working_directory)
-            prompt_path = f"/mnt/{issue_id}/prompt.txt"
+            prompt_path = f"/mnt/{issue_ts}/prompt.txt"
 
             # Build the Docker command
             command = [

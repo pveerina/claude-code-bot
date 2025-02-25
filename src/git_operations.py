@@ -107,11 +107,6 @@ class GitOperations:
 
         self._run_command(["git", "push", "origin", branch_name])
 
-    def has_changes(self):
-        """Check if there are any changes in the working directory."""
-        status_out, _ = self._run_command(["git", "status", "--porcelain"])
-        return bool(status_out)
-
     def get_modified_files(self):
         """Get a list of modified files from git."""
         stdout, _ = self._run_command(["git", "status", "--porcelain"])

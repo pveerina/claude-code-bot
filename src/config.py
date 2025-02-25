@@ -36,7 +36,7 @@ AI_TAG_NAME = os.environ.get("AI_TAG_NAME", "AI")
 # Polling configuration
 DEFAULT_POLL_INTERVAL = int(os.environ.get("DEFAULT_POLL_INTERVAL", "60"))
 PROCESSED_ISSUES_FILE = os.environ.get("PROCESSED_ISSUES_FILE", "logs/issues.json")
-POLL_LOOKBACK_DAYS = int(os.environ.get("POLL_LOOKBACK_DAYS", "7"))
+POLL_LOOKBACK_DAYS = int(os.environ.get("POLL_LOOKBACK_DAYS", "0"))
 
 
 def validate_config():
